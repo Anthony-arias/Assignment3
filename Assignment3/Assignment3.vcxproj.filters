@@ -32,5 +32,8 @@
     <ClInclude Include="optionThree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Peg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
