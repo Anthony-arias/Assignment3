@@ -13,6 +13,7 @@
 void displayRules(void);
 void displayPegs(Peg pegOne, Peg pegTwo, Peg pegThree, int maxRingNumb);
 char getPeg(string prompt);
+char getYesNo(string prompt);
 void moveDisk(Peg* startingPeg, Peg* endingPeg);
 
 using namespace std;
@@ -38,11 +39,17 @@ void playProgramTwo(vector<Statistics>& allGames)
 		clearScreen();
 		displayRules();
 		displayPegs(pegOne, pegTwo, pegThree, maxNumbOfRings);
+
+		if (pegThree.getListOfDisks().size() == maxNumbOfRings)
+		{
+			cout << "\n\tCongratulation! You have solved the game in " + to_string(moveCount + 1) + " moves." << endl;
+			char input
+		}
 		
 		char startPeg = getPeg("\tSelect the top disk from the start peg (A, B, C, or Q-quit): ");
 		char endPeg = getPeg("\tSelect the end peg (A, B, C or Q-quit) to move the selected disk: ");
 
-		if (startPeg == 'Q' || endPeg == 'Q') break;
+		if (startPeg == 'Q' || endPeg == 'Q') return;
 		if (startPeg == endPeg)
 		{
 			cout << "\n\tERROR: Cannot make the move. The selected end peg cannot be the same as the selected start peg.\n";
@@ -167,6 +174,20 @@ char getPeg(string prompt)
 		case 'b': case 'B': return 'B';
 		case 'c': case 'C': return 'C';
 		default: cout << "\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
+		}
+	} while (true);
+}
+
+char getYesNo(string prompt)
+{
+	do
+	{
+		int userInput = inputChar(prompt);
+		switch (userInput)
+		{
+		case 'y': case 'Y': return 'Y';
+		case 'n': case 'N': return 'N';
+		default: cout << "\tERROR-1A: Invalid input. Must be 'Y', or 'N'" << endl;
 		}
 	} while (true);
 }
