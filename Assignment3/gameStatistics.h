@@ -42,6 +42,8 @@ void showStatistics(vector<gameStatistics> log)
 				}
 				j++;
 			}
+			else
+				break;
 		}
 		i = j;
 		int averagedTime = totalTime / total;

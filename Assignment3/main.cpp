@@ -118,7 +118,7 @@ void programTwo(void)
 					if (source == 'Q')
 						return;
 					else
-						cout << "t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
+						cout << "\t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
 				}
 			}
 
@@ -132,7 +132,7 @@ void programTwo(void)
 					if (destination == 'Q')
 						return;
 					else
-						cout << "t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
+						cout << "\t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
 				}
 			}
 			towerOfHanoi(numberOfRings, pegA, pegB, pegC, source, destination);
@@ -148,6 +148,7 @@ void programTwo(void)
 		currentPlayer.moved = count;
 		userLog.push_back(currentPlayer);
 	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
+	cout << "\n\tGame statistics:" << endl;
 	showStatistics(userLog);
 }
 //PreCondition: 
