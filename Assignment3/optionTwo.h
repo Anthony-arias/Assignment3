@@ -1,6 +1,7 @@
 #include "input.h"
 #include "Tower.h"
 
+
 void movedDicks(Tower &source, Tower &destination, char s, char d)
 {
 	int topSource, topDestination;
@@ -92,3 +93,4 @@ void display(Tower A, Tower B, Tower C, int numberOfRings)
 		cout << "\n\tTower of Hanoi" << endl;
 	}
 }
+

@@ -6,9 +6,12 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "input.h"
 #include "optionTwo.h"
 #include "Tower.h"
+#include "time.h"
+#include "gameStatistics.h"
 
 void mainMenu(void);
 void programOne(void);
@@ -86,9 +89,14 @@ void programTwo(void)
 	cout << "\t2. Each move consists of taking the upper disk from one of the stacks and" << endl;
 	cout << "\t   placing it on top of another stack or on an empty peg." << endl;
 	cout << "\t3. No larger disk may be placed on top of a smaller disk." << endl;
+	clock_t start, end;
+	int usedTime;
+	int minTime = -1, maxTime = -1, averagedTime;
+	vector<gameStatistics>userLog;
 	do
 	{
 		int numberOfRings = inputInteger("\n\t Enter the number of rings (1..64) to begin: ", 1, 64);
+		start = clock();
 		if (numberOfRings >= 10)
 			cout << "\n\tNote: The rings will be represented with numbers (1 is the smallest size and " << numberOfRings << " is the largest size)." << endl;
 		int count = 0;
@@ -132,8 +140,15 @@ void programTwo(void)
 			count++;
 		} while (!pegA.isEmpty() || !pegB.isEmpty());
 		cout << "\n\tCongratulation! You have solved the game in " << count << " move." << endl;
+		end = clock();
+		usedTime = (int)(end - start) / CLOCKS_PER_SEC;
+		gameStatistics currentPlayer;
+		currentPlayer.numberOfRings = numberOfRings;
+		currentPlayer.usedTime = usedTime;
+		currentPlayer.moved = count;
+		userLog.push_back(currentPlayer);
 	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
-
+	showStatistics(userLog);
 }
 //PreCondition: 
 //PostCondition:
