@@ -147,6 +147,7 @@
     <ClInclude Include="optionThree.h" />
     <ClInclude Include="optionTwo.h" />
     <ClInclude Include="Peg.h" />
+    <ClInclude Include="Statistics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

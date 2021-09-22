@@ -8,6 +8,7 @@
 #include <ctime>
 #include "input.h"
 #include "Peg.h"
+#include "Statistics.h"
 
 void displayRules(void);
 void displayPegs(Peg pegOne, Peg pegTwo, Peg pegThree, int maxRingNumb);
@@ -16,7 +17,7 @@ void moveDisk(Peg* startingPeg, Peg* endingPeg);
 
 using namespace std;
 
-void playProgramTwo(void)
+void playProgramTwo(vector<Statistics>& allGames)
 {
 	clearScreen();
 	displayRules();
@@ -28,7 +29,7 @@ void playProgramTwo(void)
 	Peg pegThree = Peg(3, 'C', true);
 
 	clock_t start = clock();
-	int duration;
+	int duration = 0;
 
 	int moveCount = 0;
 
@@ -38,13 +39,13 @@ void playProgramTwo(void)
 		displayRules();
 		displayPegs(pegOne, pegTwo, pegThree, maxNumbOfRings);
 
-		if (pegThree.getListOfDisks().size() == maxNumbOfRings)
+		/*if (pegThree.getListOfDisks().size() == maxNumbOfRings)
 		{
 			duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 			cout << "\tCongratulation! You have solved the game in " + to_string(moveCount) + " moves." << endl;
 			cout << "\t\tThe fastest time was " + to_string(duration) + " seconds in " + to_string(moveCount) + " moves." << endl;
 			break;
-		}
+		}*/
 		
 		char startPeg = getPeg("\tSelect the top disk from the start peg (A, B, C, or Q-quit): ");
 		char endPeg = getPeg("\tSelect the end peg (A, B, C or Q-quit) to move the selected disk: ");
@@ -71,6 +72,19 @@ void playProgramTwo(void)
 		moveDisk(startingPeg, endingPeg);
 
 	} while (true);
+
+	for (int i = 0; i < allGames.size(); i++)
+	{
+		if (allGames[i].getNumberOfDisks() == maxNumbOfRings)
+		{
+			allGames[i].addGameData(duration, moveCount);
+			return;
+		}
+	}
+	Statistics games = Statistics(maxNumbOfRings);
+	games.addGameData(duration, moveCount);
+	allGames.push_back(games);
+
 }
 
 void displayRules(void)

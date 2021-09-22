@@ -6,8 +6,10 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "input.h"
 #include "optionTwo.h"
+#include "Statistics.h"
 
 void mainMenu(void);
 void programOne(void);
@@ -38,7 +40,7 @@ void mainMenu(void)
         {
         case 0: clearScreen(); return;
         case 1: clearScreen(); programOne(); pause("\n\t\tPress enter to continue..."); break;
-        case 2: clearScreen(); playProgramTwo(); pause("\n\t\tPress enter to continue..."); break;
+        case 2: clearScreen(); programTwo(); pause("\n\t\tPress enter to continue..."); break;
         case 3: clearScreen(); programThree(); pause("\n\t\tPress enter to continue..."); break;
         default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..2." << endl;
             pause("\n\t\tPress enter to continue...");
@@ -72,21 +74,23 @@ void programOne(void)
 //PostCondition:
 void programTwo(void)
 {
-    do
+    vector<Statistics> GamesPlayed;
+    playProgramTwo(GamesPlayed);
+
+    for (int i = 0; i < GamesPlayed.size(); i++)
     {
-        clearScreen();
-        /*display here*/
+        
+        cout << "\t" + to_string(GamesPlayed[i].getSize()) 
+            + " game using "+ to_string(GamesPlayed[i].getNumberOfDisks()) +" disks was played." << endl;
 
-        int option = inputInteger("\t\tOption: ");
-        switch (option)
-        {
-        case '0': return;
-            /*stuff here*/
-        default: cout << "\t\tERROR-1A: Invalid input. Must be" << endl;
-            pause("\n\t\tPress enter to continue...");
-        }
-
-    } while (true);
+        cout << "\t\tThe fastest time was " + to_string(GamesPlayed[i].getTimeComplet(GamesPlayed[i].getFastestGame()))
+            + " seconds in " + to_string(GamesPlayed[i].getStepsTaken(GamesPlayed[i].getFastestGame()))
+            + " moves." << endl;
+        cout << "\t\tThe slowest time was " + to_string(GamesPlayed[i].getTimeComplet(GamesPlayed[i].getSlowestGame()))
+            + " seconds in " + to_string(GamesPlayed[i].getStepsTaken(GamesPlayed[i].getSlowestGame()))
+            + " moves." << endl;
+    }
+    pause("wait");
 }
 //PreCondition: 
 //PostCondition:
