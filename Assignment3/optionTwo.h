@@ -38,14 +38,6 @@ void playProgramTwo(vector<Statistics>& allGames)
 		clearScreen();
 		displayRules();
 		displayPegs(pegOne, pegTwo, pegThree, maxNumbOfRings);
-
-		/*if (pegThree.getListOfDisks().size() == maxNumbOfRings)
-		{
-			duration = (clock() - start) / (int)CLOCKS_PER_SEC;
-			cout << "\tCongratulation! You have solved the game in " + to_string(moveCount) + " moves." << endl;
-			cout << "\t\tThe fastest time was " + to_string(duration) + " seconds in " + to_string(moveCount) + " moves." << endl;
-			break;
-		}*/
 		
 		char startPeg = getPeg("\tSelect the top disk from the start peg (A, B, C, or Q-quit): ");
 		char endPeg = getPeg("\tSelect the end peg (A, B, C or Q-quit) to move the selected disk: ");
@@ -70,6 +62,7 @@ void playProgramTwo(vector<Statistics>& allGames)
 
 		moveCount++;
 		moveDisk(startingPeg, endingPeg);
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 
 	} while (true);
 

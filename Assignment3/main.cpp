@@ -79,15 +79,19 @@ void programTwo(void)
 
     for (int i = 0; i < GamesPlayed.size(); i++)
     {
+        int fastestTime = GamesPlayed[i].getTimeComplet(GamesPlayed[i].getFastestGame());
+        int fastestSteps = GamesPlayed[i].getStepsTaken(GamesPlayed[i].getFastestGame());
+        int slowestTime = GamesPlayed[i].getTimeComplet(GamesPlayed[i].getSlowestGame());
+        int slowestSteps = GamesPlayed[i].getStepsTaken(GamesPlayed[i].getSlowestGame());
         
         cout << "\t" + to_string(GamesPlayed[i].getSize()) 
             + " game using "+ to_string(GamesPlayed[i].getNumberOfDisks()) +" disks was played." << endl;
 
-        cout << "\t\tThe fastest time was " + to_string(GamesPlayed[i].getTimeComplet(GamesPlayed[i].getFastestGame()))
-            + " seconds in " + to_string(GamesPlayed[i].getStepsTaken(GamesPlayed[i].getFastestGame()))
+        cout << "\t\tThe fastest time was " + to_string(fastestTime)
+            + " seconds in " + to_string(fastestSteps)
             + " moves." << endl;
-        cout << "\t\tThe slowest time was " + to_string(GamesPlayed[i].getTimeComplet(GamesPlayed[i].getSlowestGame()))
-            + " seconds in " + to_string(GamesPlayed[i].getStepsTaken(GamesPlayed[i].getSlowestGame()))
+        cout << "\t\tThe slowest time was " + to_string(slowestTime)
+            + " seconds in " + to_string(slowestSteps)
             + " moves." << endl;
     }
     pause("wait");
