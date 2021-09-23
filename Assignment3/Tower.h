@@ -22,7 +22,7 @@ public:
 	void push(int element);
 	void pop(int& element);
 	bool isEmpty() const;
-	void print() const;
+	vector<int> getAllValues(int size) const;
 
 };
 //PreCondition: input element (int) 
@@ -89,25 +89,34 @@ bool Tower::isEmpty() const
 }
 
 //PreCondition: NA
-//PostCondition: displays the value stored in the stack on the screen. 
-void Tower::print() const
+//PostCondition: . 
+vector<int> Tower::getAllValues(int size) const
 {
+	vector<int> data;
 	if (isEmpty())
-		cout << "Stack is empty" << endl;
+	{
+		for (int i = 0; i < size; i++)
+			data.push_back(0);
+	}
 	else
 	{
-		cout << top->value << endl;
-
+		data.push_back(top->value);
+		int index = 1;
 		if (top->next != nullptr)
 		{
 			StackNode* temp = top->next;
-
 			while (temp)
 			{
-				cout << temp->value << endl;
+				data.push_back(temp->value);
 				temp = temp->next;
+				index++;
 			}
 		}
-		cout << endl;
+		if (index < size)
+		{
+			for (int j = index; j < size; j++)
+				data.push_back(0);
+		}
 	}
+	return data;
 }
