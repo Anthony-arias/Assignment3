@@ -89,7 +89,7 @@ bool Tower::isEmpty() const
 }
 
 //PreCondition: NA
-//PostCondition: . 
+//PostCondition: Return vector of all values of the stack. 
 vector<int> Tower::getAllValues(int size) const
 {
 	vector<int> data;

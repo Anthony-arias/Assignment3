@@ -16,7 +16,7 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 		{
 			source.pop(topSource);
 			destination.push(topSource);
-			cout << "\n\tTop disk from peg-" << s << " has moved to peg -" << d << endl;
+			cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
 		}
 		else
 		{
@@ -26,15 +26,15 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 			{
 				source.push(topSource);
 				destination.push(topDestination);
-				cout << "\n\tERROR: Cannot make the move. Top disk (" << topSource << ") of peg - " << s
-					<< " , is larger than top disk(" << topDestination << ") of peg - " << d << endl;
-				cout << "\t	    Please choose again." << endl;
+				cout << "\n\tERROR: Cannot make the move. Top disk(" << topSource << ") of peg-" << s
+					<< ", is larger than top disk(" << topDestination << ") of peg-" << d << endl;
+				cout << "\t       Please chooser again." << endl;
 			}
 			else
 			{
 				destination.push(topDestination);
 				destination.push(topSource);
-				cout << "\n\tTop disk from peg-" << s << " has moved to peg -" << d << endl;
+				cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
 			}
 		}
 	}
@@ -48,7 +48,7 @@ void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, 
 	if (source == destination)
 	{
 		cout << "\n\tERROR: Cannot make the move. The selected end peg cannot be the same as the selected start peg." << endl;
-		cout << "	    Please choose again." << endl;
+		cout << "\t       Please chooser again." << endl;
 	}
 	else
 	{
