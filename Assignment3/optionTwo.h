@@ -1,7 +1,8 @@
 #include "input.h"
 #include "Tower.h"
 
-
+// Precondition: intput the original tower and destination tower and names of them
+// Postcondition: move the disk from the original tower to the destination tower
 void movedDicks(Tower &source, Tower &destination, char s, char d)
 {
 	int topSource, topDestination;
@@ -41,6 +42,8 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 
 }
 
+// Precondition: intput number of rings, three towers and names of the original tower and destination tower
+// Postcondition: move the disk from the original tower to the destination tower
 void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, char destination)
 {
 
@@ -79,6 +82,9 @@ void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, 
 		}
 	}
 }
+
+// Precondition: intput tree towers and number of rings
+// Postcondition: display the content of three towers
 void display(Tower A, Tower B, Tower C, int numberOfRings)
 {
 	vector<int>dataA;

@@ -7,9 +7,14 @@ struct gameStatistics
 	int moved = 0;
 };
 
+// Precondition: intput two items(type: ameStatistics) need to compare 
+// Postcondition: return true if item one less than item true, and false otherwise
 bool compare(gameStatistics tmp1, gameStatistics tmp2) {
 	return (tmp1.number < tmp2.number);
 }
+
+// Precondition: intput int gameOption, int total, int disks, int minTime, int maxTime, int minMoved, int maxMoved, int averagedTime 
+// Postcondition: display text
 void textStatistics(int gameOption, int total, int disks, int minTime, int maxTime, int minMoved, int maxMoved, int averagedTime)
 {
 	string totalLabel = to_string(total);
@@ -65,6 +70,10 @@ void textStatistics(int gameOption, int total, int disks, int minTime, int maxTi
 	cout << "\n\t\t " << slowestLabel << endl;
 	cout << "\n\t\t " << averagedLabel << endl;
 }
+
+
+// Precondition: log:  vector<gameStatistics> and gameOption: int
+// Postcondition: display statistics data 
 void showStatistics(vector<gameStatistics> log, int gameOption)
 {
 	sort(log.begin(), log.end(), compare);
