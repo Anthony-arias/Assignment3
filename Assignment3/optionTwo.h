@@ -42,8 +42,10 @@ void playProgramTwo(vector<Statistics>& allGames)
 
 		if (pegThree.getListOfDisks().size() == maxNumbOfRings)
 		{
-			cout << "\n\tCongratulation! You have solved the game in " + to_string(moveCount + 1) + " moves." << endl;
-			char input
+			cout << "\tCongratulation! You have solved the game in " + to_string(moveCount) + " move(s)." << endl;
+			char input = getYesNo("\n\tPlay again? (Y-yes or N-no) ");
+			if (input == 'Y') { playProgramTwo(allGames); break; }
+			else if (input == 'N') break;
 		}
 		
 		char startPeg = getPeg("\tSelect the top disk from the start peg (A, B, C, or Q-quit): ");

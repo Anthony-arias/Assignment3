@@ -77,24 +77,25 @@ void programTwo(void)
     vector<Statistics> GamesPlayed;
     playProgramTwo(GamesPlayed);
 
+    if (GamesPlayed.size() > 0) cout << "\n\tGame statistics:\n" << endl;
     for (int i = 0; i < GamesPlayed.size(); i++)
     {
         int fastestTime = GamesPlayed[i].getTimeComplet(GamesPlayed[i].getFastestGame());
         int fastestSteps = GamesPlayed[i].getStepsTaken(GamesPlayed[i].getFastestGame());
         int slowestTime = GamesPlayed[i].getTimeComplet(GamesPlayed[i].getSlowestGame());
         int slowestSteps = GamesPlayed[i].getStepsTaken(GamesPlayed[i].getSlowestGame());
+        int averageTime = GamesPlayed[i].getAverageTime();
         
         cout << "\t" + to_string(GamesPlayed[i].getSize()) 
-            + " game using "+ to_string(GamesPlayed[i].getNumberOfDisks()) +" disks was played." << endl;
-
+            + " game using "+ to_string(GamesPlayed[i].getNumberOfDisks()) +" disk(s) was played." << endl;
         cout << "\t\tThe fastest time was " + to_string(fastestTime)
-            + " seconds in " + to_string(fastestSteps)
-            + " moves." << endl;
+            + " second(s) in " + to_string(fastestSteps)
+            + " move(s)." << endl;
         cout << "\t\tThe slowest time was " + to_string(slowestTime)
-            + " seconds in " + to_string(slowestSteps)
-            + " moves." << endl;
+            + " second(s) in " + to_string(slowestSteps)
+            + " move(s)." << endl;
+        cout << "\t\tThe average time was " + to_string(averageTime) + " second(s)." << endl;
     }
-    pause("wait");
 }
 //PreCondition: 
 //PostCondition:
