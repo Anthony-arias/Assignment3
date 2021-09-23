@@ -3,26 +3,11 @@
 #define OPTION_THREE_LOCK
 
 #include <iostream>
-#include <iomanip>
-#include <array>
-#include <vector>
-#include <ctime>
-#include <cmath>
-#include <string>
-#include <cstring>
-#include <fstream>
-#include <sstream>
-#include <map>
-#include <numeric>
-#include <list>
-#include <forward_list>
-#include <algorithm>
 #include "input.h"
 
 
 using namespace std;
 
-void n_Queens();
 char displayGameOptions(char& option);
 void displayBoard(vector< vector <char>> v);
 bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size);
@@ -31,66 +16,6 @@ bool checkWinningCondition(vector<vector <char>>& v, int size);
 void inputQueen(vector< vector <char>>& v, int size);
 void removeQueen(vector< vector <char>>& v, int size);
 
-
-// Precondition: NA
-// Postcondition: NA
-void n_Queens()
-{
-	clearScreen();
-	cout << "\n\tThe n-queens puzzle is the problem of placing n chess queens on a nxn chessboard";
-	cout << "\n\tso that no two queens threaten each other; thus, a solution requires that no two";
-	cout << "\n\tqueens share the same row, column, or diagonal. Solutions exist for all natural";
-	cout << "\n\tnumbers n with the exception of n = 2 and n = 3.";
-
-	clock_t start, end;
-	int usedTime;
-	int minTime = -1, maxTime = -1, averagedTime;
-	vector<gameStatistics> userLog;
-
-	do
-	{
-		int count = 0;
-		char option = ' ';
-		int n = inputInteger("\n\n\tEnter the board dimension nxn (1..64): ", 1, 64);
-		start = clock();
-		cout << "\n\n\t" << n << "-Queens\n";
-		vector<vector<char>> board(n, vector<char>(n, '-'));
-		displayBoard(board);
-
-		do
-		{
-			switch (displayGameOptions(option))
-			{
-			case '0': return; break;
-			case 'A':
-				//Function to proceed step A: Place the queen
-				inputQueen(board, n);
-				count++;
-				break;
-			case 'B':
-				//Function to proceed step B: Remove an existing queen
-				removeQueen(board, n);
-				count++;
-				break;
-			default: cout << "\n\tERROR-1A: Invalid input. Must be 'A','B', or '0'\n";
-				break;
-			}
-		} while (!checkWinningCondition(board, n) && option != '0');
-
-		cout << "\n\tCongratulation, you solved the " << n << "-Queens in " << count << " move(s).\n";
-		end = clock();
-		usedTime = (int)(end - start) / CLOCKS_PER_SEC;
-		gameStatistics currentPlayer;
-		currentPlayer.number = n;
-		currentPlayer.usedTime = usedTime;
-		currentPlayer.moved = count;
-		userLog.push_back(currentPlayer);
-
-	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
-
-	cout << "\n\tGame statistics:" << endl;
-	showQueenStatistics(userLog);
-}
 
 // Precondition: valid char option
 // Postcondition: return the option from menu
