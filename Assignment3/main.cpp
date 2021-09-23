@@ -178,7 +178,7 @@ void programThree(void)
 		int n = inputInteger("\n\n\tEnter the board dimension nxn (1..64): ", 1, 64);
 		start = clock();
 		cout << "\n\n\t" << n << "-Queens\n";
-		vector<vector<char>> board(n, vector<char>(n, '-'));
+		vector<vector<char>> board(n, vector<char>(n, '_'));
 		displayBoard(board);
 
 		do

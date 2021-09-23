@@ -60,7 +60,7 @@ void removeQueen(vector< vector <char>>& v, int size)
 
 		if (v[inputRow - 1][inputColumn - 1] == 'Q')
 		{
-			v[inputRow - 1][inputColumn - 1] = '-';
+			v[inputRow - 1][inputColumn - 1] = '_';
 			displayBoard(v);
 		}
 		else
@@ -162,7 +162,7 @@ bool checkEmptyBoard(vector< vector <char>>& v, int size)
 		cout << "\t";
 		for (int j = 0; j < size; j++)
 		{
-			if (v[i][j] != '-')
+			if (v[i][j] != '_')
 				countQueen++;
 			else
 				continue;
@@ -180,13 +180,92 @@ bool checkEmptyBoard(vector< vector <char>>& v, int size)
 // Postcondition: display the content in board game
 void displayBoard(vector< vector <char>> v)
 {
+	cout << endl;
+	int shapeSize = v.capacity() + 2;
+	for (int row = 0; row < shapeSize; ++row)
+	{
+		cout << "\t";
+		if (row == 0 || row == shapeSize - 1)
+		{
+			for (int column = 0; column < shapeSize; ++column)
+			{
+				if (row == 0)
+				{
+					if (column == 0)
+						cout << char(201);
+					else
+					{
+						if (column == shapeSize - 1)
+							cout << char(205) << char(187);
+						else
+							cout << string(2, char(205));
+					}
+				}
+				else
+				{
+					if (column == 0)
+						cout << char(200);
+					else
+					{
+						if (column == shapeSize - 1)
+							cout << char(205)<< char(188);
+						else
+							cout << string(2,char(205));
+					}
+				}
+			}
+		}
+
+		else
+		{
+			for (int column = 0; column < shapeSize; ++column)
+				if (column == 0)
+					cout << char(186)<<" ";
+				else
+				{
+					if(column == shapeSize - 1)
+						cout << " " << char(186);
+					else
+					{
+						int i = row - 1;
+						int j = column - 1;
+						if (v[i][j] == '_' || v[i][j] == 'Q')
+						{
+							if (i == v.capacity() - 1 && v[i][j] == '_')
+							{
+								if (j < v.capacity() - 1)
+									cout << ' ' << char(179);
+								else
+									cout << ' '; 
+							}
+							else
+							{
+								if (j < v.capacity() - 1)
+									cout << v[i][j] << char(179);
+								else
+									cout << v[i][j];
+							}
+						}
+					}
+				}		
+		}
+		cout << endl;
+	}
+		
+
+}
+
+// Precondition: valid nested char vector to display board game
+// Postcondition: display the content in board game
+void displayBoard2(vector< vector <char>> v)
+{
 	cout << "\n";
 	for (int i = 0; i < v.capacity(); i++)
 	{
 		cout << "\t";
 		for (int j = 0; j < v.capacity(); j++)
-			if (v[i][j] == '-' || v[i][j] == 'Q')
-				cout << v[i][j] << " ";
+			if (v[i][j] == '_' || v[i][j] == 'Q')
+				cout << v[i][j] << " *";
 
 		cout << "\n";
 	}
