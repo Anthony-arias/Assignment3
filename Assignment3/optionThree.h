@@ -255,20 +255,6 @@ void displayBoard(vector< vector <char>> v)
 
 }
 
-// Precondition: valid nested char vector to display board game
-// Postcondition: display the content in board game
-void displayBoard2(vector< vector <char>> v)
-{
-	cout << "\n";
-	for (int i = 0; i < v.capacity(); i++)
-	{
-		cout << "\t";
-		for (int j = 0; j < v.capacity(); j++)
-			if (v[i][j] == '_' || v[i][j] == 'Q')
-				cout << v[i][j] << " *";
 
-		cout << "\n";
-	}
-}
 
 #endif
