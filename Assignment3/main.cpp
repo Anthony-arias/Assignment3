@@ -12,6 +12,7 @@
 #include "Tower.h"
 #include "time.h"
 #include "gameStatistics.h"
+#include "optionThree.h"
 
 void mainMenu(void);
 void programOne(void);
@@ -143,7 +144,7 @@ void programTwo(void)
 		end = clock();
 		usedTime = (int)(end - start) / CLOCKS_PER_SEC;
 		gameStatistics currentPlayer;
-		currentPlayer.numberOfRings = numberOfRings;
+		currentPlayer.number = numberOfRings;
 		currentPlayer.usedTime = usedTime;
 		currentPlayer.moved = count;
 		userLog.push_back(currentPlayer);
@@ -155,21 +156,7 @@ void programTwo(void)
 //PostCondition:
 void programThree(void)
 {
-    do
-    {
-        clearScreen();
-        /*display here*/
-
-        int option = inputInteger("\t\tOption: ");
-        switch (option)
-        {
-        case '0': return;
-            /*stuff here*/
-        default: cout << "\t\tERROR-1A: Invalid input. Must be" << endl;
-            pause("\n\t\tPress enter to continue...");
-        }
-
-    } while (true);
+	n_Queens();
 }
 
 //PreCondition: NA
