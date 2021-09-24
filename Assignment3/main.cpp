@@ -159,6 +159,8 @@ void programTwo(void)
 void programThree(void)
 {
 	clearScreen();
+	cout << "3> n-Queens" << endl;
+	cout << string(100, char(196)) << endl;
 	cout << "\n\tThe n-queens puzzle is the problem of placing n chess queens on a nxn chessboard";
 	cout << "\n\tso that no two queens threaten each other; thus, a solution requires that no two";
 	cout << "\n\tqueens share the same row, column, or diagonal. Solutions exist for all natural";
