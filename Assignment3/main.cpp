@@ -92,7 +92,6 @@ void programTwo(void)
 	cout << "\t3. No larger disk may be placed on top of a smaller disk." << endl;
 	clock_t start, end;
 	int usedTime;
-	int minTime = -1, maxTime = -1, averagedTime;
 	vector<gameStatistics>userLog;
 	do
 	{
@@ -167,7 +166,6 @@ void programThree(void)
 
 	clock_t start, end;
 	int usedTime;
-	int minTime = -1, maxTime = -1, averagedTime;
 	vector<gameStatistics> userLog;
 
 	do
@@ -187,13 +185,11 @@ void programThree(void)
 			case '0': return; break;
 			case 'A':
 				//Function to proceed step A: Place the queen
-				inputQueen(board, n);
-				count++;
+				inputQueen(board, n, count);
 				break;
 			case 'B':
 				//Function to proceed step B: Remove an existing queen
-				removeQueen(board, n);
-				count++;
+				removeQueen(board, n, count);
 				break;
 			default: cout << "\n\tERROR-1A: Invalid input. Must be 'A','B', or '0'\n";
 				break;

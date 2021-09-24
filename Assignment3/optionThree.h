@@ -35,7 +35,7 @@ char displayGameOptions(char& option)
 
 // Precondition: valid nested char vector to display board game and the board's size
 // Postcondition: input a queen from indicated position
-void inputQueen(vector< vector <char>>& v, int size)
+void inputQueen(vector< vector <char>>& v, int size, int &count)
 {
 	int inputRow = inputInteger("\n\tPosition a queen in the row (1.." + to_string(size) + "): ", 1, size);
 	int inputColumn = inputInteger("\n\tPosition a queen in the column (1.." + to_string(size) + "): ", 1, size);
@@ -44,12 +44,13 @@ void inputQueen(vector< vector <char>>& v, int size)
 	{
 		v[inputRow - 1][inputColumn - 1] = 'Q';
 		displayBoard(v);
+		count++;
 	}
 }
 
 // Precondition: valid nested char vector to display board game and the board's size
 // Postcondition: remove a queen from indicated position
-void removeQueen(vector< vector <char>>& v, int size)
+void removeQueen(vector< vector <char>>& v, int size, int &count)
 {
 	if (checkEmptyBoard(v, size))
 		cout << "\n\tERROR: The board is empty. There is no queen to remove.\n";
@@ -62,6 +63,7 @@ void removeQueen(vector< vector <char>>& v, int size)
 		{
 			v[inputRow - 1][inputColumn - 1] = '_';
 			displayBoard(v);
+			count++;
 		}
 		else
 			cout << "\n\tERROR: No such queen existed.\n";
