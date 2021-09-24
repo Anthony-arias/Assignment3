@@ -29,6 +29,7 @@
     <ClInclude Include="optionThree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+ Van
     <ClInclude Include="Tower.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -36,6 +37,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TicTacToe.h">
+
+   
+master
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

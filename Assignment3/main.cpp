@@ -9,11 +9,14 @@
 #include <vector>
 #include "input.h"
 #include "optionTwo.h"
+ Van
 #include "Tower.h"
 #include "time.h"
 #include "gameStatistics.h"
 #include "optionThree.h"
 #include "TicTacToe.h"
+
+ master
 
 void mainMenu(void);
 void programOne(void);
@@ -44,7 +47,7 @@ void mainMenu(void)
         {
         case 0: clearScreen(); return;
         case 1: clearScreen(); programOne(); pause("\n\t\tPress enter to continue..."); break;
-        case 2: clearScreen(); programTwo(); pause("\n\t\tPress enter to continue..."); break;
+        case 2: clearScreen(); playProgramTwo(); pause("\n\t\tPress enter to continue..."); break;
         case 3: clearScreen(); programThree(); pause("\n\t\tPress enter to continue..."); break;
         default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..2." << endl;
             pause("\n\t\tPress enter to continue...");
