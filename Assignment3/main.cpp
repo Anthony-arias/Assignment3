@@ -136,9 +136,8 @@ void programTwo(void)
 						cout << "\t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
 				}
 			}
-			towerOfHanoi(numberOfRings, pegA, pegB, pegC, source, destination);
+			towerOfHanoi(numberOfRings, pegA, pegB, pegC, source, destination,count);
 			display(pegA, pegB, pegC, numberOfRings);
-			count++;
 		} while (!pegA.isEmpty() || !pegB.isEmpty());
 		if (count == 1)
 			cout << "\n\tCongratulation! You have solved the game in " << count << " move." << endl;

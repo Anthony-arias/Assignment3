@@ -3,7 +3,7 @@
 
 // Precondition: intput the original tower and destination tower and names of them
 // Postcondition: move the disk from the original tower to the destination tower
-void movedDicks(Tower &source, Tower &destination, char s, char d)
+void movedDisks(Tower &source, Tower &destination, char s, char d,int &count)
 {
 	int topSource, topDestination;
 	if (source.isEmpty())
@@ -18,6 +18,7 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 			source.pop(topSource);
 			destination.push(topSource);
 			cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
+			count++;
 		}
 		else
 		{
@@ -36,6 +37,7 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 				destination.push(topDestination);
 				destination.push(topSource);
 				cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
+				count++;
 			}
 		}
 	}
@@ -44,7 +46,7 @@ void movedDicks(Tower &source, Tower &destination, char s, char d)
 
 // Precondition: intput number of rings, three towers and names of the original tower and destination tower
 // Postcondition: move the disk from the original tower to the destination tower
-void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, char destination)
+void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, char destination, int &count)
 {
 
 	
@@ -59,25 +61,25 @@ void towerOfHanoi(int numberOfRings, Tower &A, Tower &B, Tower &C, char source, 
 		if (source == 'A')
 		{
 			if(destination =='B')
-				movedDicks(A, B, source, destination);
+				movedDisks(A, B, source, destination, count);
 			else
-				movedDicks(A, C, source, destination);
+				movedDisks(A, C, source, destination, count);
 		}
 		else
 		{
 			if (source == 'B')
 			{
 				if (destination == 'A')
-					movedDicks(B, A, source, destination);
+					movedDisks(B, A, source, destination, count);
 				else
-					movedDicks(B, C, source, destination);
+					movedDisks(B, C, source, destination, count);
 			}
 			else
 			{
 				if (destination == 'A')
-					movedDicks(C, A, source, destination);
+					movedDisks(C, A, source, destination, count);
 				else
-					movedDicks(C, B, source, destination);
+					movedDisks(C, B, source, destination, count);
 			}
 		}
 	}
