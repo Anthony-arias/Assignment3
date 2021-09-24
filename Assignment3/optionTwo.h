@@ -8,7 +8,7 @@ void movedDisks(Tower &source, Tower &destination, char s, char d,int &count)
 	int topSource, topDestination;
 	if (source.isEmpty())
 	{
-		cout << "\n\tERROR: Cannot make the move. There is no disk in the selected peg-" << s << endl;
+		cout << "\n\tERROR: Cannot make the move. There is no disk in the selected peg-" << s << '.' << endl;
 		cout << "\t       Please chooser again." << endl;
 	}
 	else
@@ -17,7 +17,7 @@ void movedDisks(Tower &source, Tower &destination, char s, char d,int &count)
 		{
 			source.pop(topSource);
 			destination.push(topSource);
-			cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
+			cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << '.' << endl;
 			count++;
 		}
 		else
@@ -29,14 +29,14 @@ void movedDisks(Tower &source, Tower &destination, char s, char d,int &count)
 				source.push(topSource);
 				destination.push(topDestination);
 				cout << "\n\tERROR: Cannot make the move. Top disk(" << topSource << ") of peg-" << s
-					<< ", is larger than top disk(" << topDestination << ") of peg-" << d << endl;
+					<< ", is larger than top disk(" << topDestination << ") of peg-" << d << '.' << endl;
 				cout << "\t       Please chooser again." << endl;
 			}
 			else
 			{
 				destination.push(topDestination);
 				destination.push(topSource);
-				cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << endl;
+				cout << "\n\tTop disk from peg-" << s << " has moved to peg-" << d << '.' << endl;
 				count++;
 			}
 		}
