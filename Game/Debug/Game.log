@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\Vince\OneDrive\CLASS WORK AND HOMEWORK\CMPR131\Module 3\Game\TicTacToe.h(292,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Vince\OneDrive\CLASS WORK AND HOMEWORK\CMPR131\Module 3\Game\Main.cpp(31,15): warning C4566: character represented by universal-character-name '\u256B' cannot be represented in the current code page (1252)
+  Game.vcxproj -> C:\Users\Vince\OneDrive\CLASS WORK AND HOMEWORK\CMPR131\Module 3\Game\Debug\Game.exe
