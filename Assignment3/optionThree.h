@@ -13,8 +13,8 @@ void displayBoard(vector< vector <char>> v);
 bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size);
 bool checkEmptyBoard(vector< vector <char>>& v, int size);
 bool checkWinningCondition(vector<vector <char>>& v, int size);
-void inputQueen(vector< vector <char>>& v, int size);
-void removeQueen(vector< vector <char>>& v, int size);
+void inputQueen(vector< vector <char>>& v, int size, int &count);
+void removeQueen(vector< vector <char>>& v, int size, int &count);
 
 
 // Precondition: valid char option
