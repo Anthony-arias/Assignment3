@@ -220,7 +220,7 @@ void programThree(void)
 //PostCondition: displays main menu options
 void displayMainMenu(void)
 {
-    cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Prof Q" << endl;
+    cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Anthony, An, Van, Vincent, Nhan" << endl;
     cout << "\t" + string(85, char(205)) << endl;
     cout << "\t\t1> Tic-Tac-Toe" << endl;
     cout << "\t\t2> Tower of Hanoi" << endl;
