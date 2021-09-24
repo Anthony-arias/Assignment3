@@ -146,12 +146,8 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="optionThree.h" />
     <ClInclude Include="optionTwo.h" />
- Van
     <ClInclude Include="TicTacToe.h" />
     <ClInclude Include="Tower.h" />
-
-    
- master
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
