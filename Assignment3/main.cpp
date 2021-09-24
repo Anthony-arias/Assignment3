@@ -80,16 +80,16 @@ void programTwo(void)
 	clearScreen();
 	cout << "2> Tower of Hanoi" << endl;
 	cout << string(100, char(196)) << endl;
-	cout << "\tThe Tower of Hanoi also called the Tower of Brahma or Lucas' Tower is a mathematical game." << endl;
-	cout << "\tIt consists of three pegs and a number of rings of different sizes, which can slide onto" << endl;
-	cout << "\tany peg.The game starts with the rings in a neat stack in ascending order of size on one" << endl;
-	cout << "\tpeg, the smallest at the top, thus making a conical shape." << endl;
-	cout << "\n\tThe objective of the game is to move the entire stack from the starting peg-A to ending peg-B," << endl;
-	cout << "\tobeying the following simple rules :" << endl;
-	cout << "\n\t\t1. Only one disk can be moved at a time." << endl;
-	cout << "\t\t2. Each move consists of taking the upper disk from one of the stacks and" << endl;
-	cout << "\t\t   placing it on top of another stack or on an empty peg." << endl;
-	cout << "\t\t3. No larger disk may be placed on top of a smaller disk." << endl;
+	cout << "The Tower of Hanoi also called the Tower of Brahma or Lucas' Tower is a mathematical game." << endl;
+	cout << "It consists of three pegs and a number of rings of different sizes, which can slide onto" << endl;
+	cout << "any peg.The game starts with the rings in a neat stack in ascending order of size on one" << endl;
+	cout << "peg, the smallest at the top, thus making a conical shape." << endl;
+	cout << "\nThe objective of the game is to move the entire stack from the starting peg - A to ending peg - B," << endl;
+	cout << "obeying the following simple rules :" << endl;
+	cout << "\n\t1. Only one disk can be moved at a time." << endl;
+	cout << "\t2. Each move consists of taking the upper disk from one of the stacks and" << endl;
+	cout << "\t   placing it on top of another stack or on an empty peg." << endl;
+	cout << "\t3. No larger disk may be placed on top of a smaller disk." << endl;
 	clock_t start, end;
 	int usedTime;
 	vector<gameStatistics>userLog;
@@ -110,7 +110,7 @@ void programTwo(void)
 
 			while (true)
 			{
-				source = inputChar("\tSelect the top disk from the start peg (A, B, C, or Q - quit): ");
+				source = inputChar("\tSelect the top disk from the start peg (A, B, C, or Q - quit) : ");
 				if (source == 'A' || source == 'B' || source == 'C')
 					break;
 				else
@@ -220,7 +220,7 @@ void programThree(void)
 //PostCondition: displays main menu options
 void displayMainMenu(void)
 {
-    cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Team." << endl;
+    cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Prof Q" << endl;
     cout << "\t" + string(85, char(205)) << endl;
     cout << "\t\t1> Tic-Tac-Toe" << endl;
     cout << "\t\t2> Tower of Hanoi" << endl;

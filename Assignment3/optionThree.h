@@ -101,7 +101,7 @@ bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size)
 		if (v[i][j] == 'Q')
 		{
 			displayBoard(v);
-			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again.\n";
+			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again\n";
 			return false;
 		}
 	}
@@ -111,7 +111,7 @@ bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size)
 		if (v[i][j] == 'Q')
 		{
 			displayBoard(v);
-			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again.\n";
+			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again\n";
 			return false;
 		}
 	}
@@ -121,7 +121,7 @@ bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size)
 		if (v[i][j] == 'Q')
 		{
 			displayBoard(v);
-			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again.\n";
+			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again\n";
 			return false;
 		}
 	}
@@ -131,7 +131,7 @@ bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size)
 		if (v[i][j] == 'Q')
 		{
 			displayBoard(v);
-			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again.\n";
+			cout << "\n\tERROR: Conflict with queens in diagonal line. Try again\n";
 			return false;
 		}
 	}
@@ -254,6 +254,9 @@ void displayBoard(vector< vector <char>> v)
 		cout << endl;
 	}
 		
+
 }
+
+
 
 #endif
