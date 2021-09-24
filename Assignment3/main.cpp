@@ -9,14 +9,11 @@
 #include <vector>
 #include "input.h"
 #include "optionTwo.h"
- Van
 #include "Tower.h"
 #include "time.h"
 #include "gameStatistics.h"
 #include "optionThree.h"
 #include "TicTacToe.h"
-
- master
 
 void mainMenu(void);
 void programOne(void);
@@ -28,31 +25,31 @@ using namespace std;
 
 int main(void)
 {
-    mainMenu();
-    return EXIT_SUCCESS;
+	mainMenu();
+	return EXIT_SUCCESS;
 }
 
 //PreCondition: NA
 //PostCondition: redirects user to different menus based on their choice
 void mainMenu(void)
 {
-    do
-    {
-        clearScreen();
+	do
+	{
+		clearScreen();
 
-        displayMainMenu();
+		displayMainMenu();
 
-        int userInput = inputInteger("\t\tOption: ");
-        switch (userInput)
-        {
-        case 0: clearScreen(); return;
-        case 1: clearScreen(); programOne(); pause("\n\t\tPress enter to continue..."); break;
-        case 2: clearScreen(); playProgramTwo(); pause("\n\t\tPress enter to continue..."); break;
-        case 3: clearScreen(); programThree(); pause("\n\t\tPress enter to continue..."); break;
-        default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..2." << endl;
-            pause("\n\t\tPress enter to continue...");
-        }
-    } while (true);
+		int userInput = inputInteger("\t\tOption: ");
+		switch (userInput)
+		{
+		case 0: clearScreen(); return;
+		case 1: clearScreen(); programOne(); pause("\n\t\tPress enter to continue..."); break;
+		case 2: clearScreen(); programTwo(); pause("\n\t\tPress enter to continue..."); break;
+		case 3: clearScreen(); programThree(); pause("\n\t\tPress enter to continue..."); break;
+		default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..2." << endl;
+			pause("\n\t\tPress enter to continue...");
+		}
+	} while (true);
 }
 
 //PreCondition: NA
@@ -150,7 +147,7 @@ void programTwo(void)
 						cout << "\t\tERROR-1A: Invalid input. Must be 'A','B','C', or 'Q'" << endl;
 				}
 			}
-			towerOfHanoi(numberOfRings, pegA, pegB, pegC, source, destination,count);
+			towerOfHanoi(numberOfRings, pegA, pegB, pegC, source, destination, count);
 			display(pegA, pegB, pegC, numberOfRings);
 		} while (!pegA.isEmpty() || !pegB.isEmpty());
 		if (count == 1)
@@ -236,12 +233,12 @@ void programThree(void)
 //PostCondition: displays main menu options
 void displayMainMenu(void)
 {
-    cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Anthony, An, Van, Vincent, Nhan" << endl;
-    cout << "\t" + string(85, char(205)) << endl;
-    cout << "\t\t1> Tic-Tac-Toe" << endl;
-    cout << "\t\t2> Tower of Hanoi" << endl;
-    cout << "\t\t3> n-Queens" << endl;
-    cout << "\t" + string(85, char(196)) << endl;
-    cout << "\t\t0> exit" << endl;
-    cout << "\t" + string(85, char(205)) << endl;
+	cout << "\n\tCMPR131 Chapter 3 - Games Applications using Container by Anthony, An, Van, Vincent, Nhan" << endl;
+	cout << "\t" + string(85, char(205)) << endl;
+	cout << "\t\t1> Tic-Tac-Toe" << endl;
+	cout << "\t\t2> Tower of Hanoi" << endl;
+	cout << "\t\t3> n-Queens" << endl;
+	cout << "\t" + string(85, char(196)) << endl;
+	cout << "\t\t0> exit" << endl;
+	cout << "\t" + string(85, char(205)) << endl;
 }
