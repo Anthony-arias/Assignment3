@@ -46,24 +46,34 @@ void textStatistics(int gameOption, int total, int disks, int minTime, int maxTi
 		averagedLabel = averagedLabel + " second.";
 
 	if (total > 1)
-		totalLabel = totalLabel + " games using " + to_string(disks);
+		totalLabel = totalLabel + " games using ";
 	else
-		totalLabel = totalLabel + " game using " + to_string(disks);
+		totalLabel = totalLabel + " game using ";
 
-	if (gameOption == 2)
+	if (gameOption == 1)
 	{
-
 		if (disks > 1)
-			totalLabel = totalLabel + " disks was played.";
+			totalLabel = totalLabel + "of Tic-Tac-Toe were played.";
 		else
-			totalLabel = totalLabel + " disk was played.";		
+			totalLabel = totalLabel + "of Tic-Tac-Toe were played.";
 	}
-	else if (gameOption == 3)
+	else
 	{
-		if (disks > 1)
-			totalLabel = totalLabel + " queens was played.";
-		else
-			totalLabel = totalLabel + " queen was played.";
+		if (gameOption == 2)
+		{
+
+			if (disks > 1)
+				totalLabel = totalLabel + to_string(disks) + " disks was played.";
+			else
+				totalLabel = totalLabel + to_string(disks) + " disk was played.";
+		}
+		else 
+		{
+			if (disks > 1)
+				totalLabel = totalLabel + to_string(disks) + " queens was played.";
+			else
+				totalLabel = totalLabel + to_string(disks) + " queen was played.";
+		}
 	}
 	cout << "\n\t " << totalLabel << endl;
 	cout << "\n\t\t " << fastestLabel << endl;

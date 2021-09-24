@@ -13,6 +13,7 @@
 #include "time.h"
 #include "gameStatistics.h"
 #include "optionThree.h"
+#include "TicTacToe.h"
 
 void mainMenu(void);
 void programOne(void);
@@ -56,21 +57,32 @@ void mainMenu(void)
 void programOne(void)
 {
 
-    do
-    {
-        clearScreen();
-        /*display here*/
+	cout << endl;
+	cout << "\tTic - tac - toe(also known as Noughts and crosses or Xs and Os) is a game for two" << endl;
+	cout << "\tplayers, Xand O, who take turns marking the spaces in a 3x3 grid.The player who" << endl;
+	cout << "\tsucceeds in placing three of their marks in a horizontal, vertical, or diagonal" << endl;
+	cout << "\trow wins the game." << endl;
+	cout << "\tThis tic - tac - toe program plays against the computer.Human player, X, will always" << endl;
+	cout << "\tfirst.Time will be recorded for the fastestand the slowest game.Average time will" << endl;
+	cout << "\tthen be calculatedand displayed." << endl;
+	cout << endl;
+	cout << "\tGame begins..." << endl;
+	cout << endl;
 
-        int option = inputInteger("\t\tOption: ");
-        switch (option)
-        {
-        case '0': return;
-        /*stuff here*/
-        default: cout << "\t\tERROR-1A: Invalid input. Must be" << endl;
-            pause("\n\t\tPress enter to continue...");
-        }
-        
-    } while (true);
+
+	TicTacToe game;
+	do
+	{
+		game.playGame();
+
+	} while (isRepeat("\n\tWould you like to play again? (Y-Yes or N-No)"));
+
+	cout << "\n\tGame Statistics:" << endl;
+	cout << endl;
+	cout << "\t" << game.getGamesPlayed() << " game using of Tic-Tac-Toe were played." << endl;
+	cout << "\t\tFastest Time: " << game.getQuickestTime() << "(s) in " << game.getLeastMoves() << " move(s)." << endl;
+	cout << "\t\tSlowest Time: " << game.getSlowestTime() << "(s) in " << game.getMostMoves() << " move(s)." << endl;
+	cout << "\t\tAverage Time: " << game.getAverageTime() << "(s)" << endl;
 }
 
 //PreCondition: 
