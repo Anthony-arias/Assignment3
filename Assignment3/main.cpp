@@ -2,7 +2,7 @@
 
 // Team: Anthony, An, Van, Vincent, Nhan
 // Chapter 3: 
-// 
+// 09/23/2021
 
 #include <iostream>
 #include <string>
@@ -52,8 +52,8 @@ void mainMenu(void)
     } while (true);
 }
 
-//PreCondition: 
-//PostCondition:
+//PreCondition: NA
+//PostCondition: Play tic-tac-toe with the computer
 void programOne(void)
 {
 
@@ -85,8 +85,8 @@ void programOne(void)
 	cout << "\t\tAverage Time: " << game.getAverageTime() << "(s)" << endl;
 }
 
-//PreCondition: 
-//PostCondition:
+//PreCondition: NA
+//PostCondition: Play Tower of Hanoi
 void programTwo(void)
 {
 	clearScreen();
@@ -166,8 +166,9 @@ void programTwo(void)
 	cout << "\n\tGame statistics:" << endl;
 	showStatistics(userLog, 2);
 }
-//PreCondition: 
-//PostCondition:
+
+//PreCondition: NA
+//PostCondition: Play n-Queens
 void programThree(void)
 {
 	clearScreen();

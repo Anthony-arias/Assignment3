@@ -48,6 +48,8 @@ private:
 
     }
 
+    // Precondition: time must be greater than 0
+    // Postcondition: moves assigned for fastest and slowest game
     void checkMoves(double time, int moves)
     {
         if (elapsedTime.size() == 0)
